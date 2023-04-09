@@ -4,12 +4,12 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-function TenureSelect({data, setData}) {
+const TenureSelect = ({data, setData}) => {
 
   const handleChange = (event) =>{
     setData({
       ...data, 
-      loanTerm: event.Target.value
+      loanTerm: event.target.value
     });
   };
   
@@ -20,12 +20,12 @@ function TenureSelect({data, setData}) {
           Tenure
         </InputLabel>
         <Select
-          labelId='dem0-simple-select-label'
+          labelId='demo-simple-select-label'
           id="demo-simple-select"
           value={data.loanTerm}
           label="Tenure"
           defaultValue={5}
-          onchange={handleChange}
+          onChange={handleChange}
           >
             <MenuItem value={5}>5 years</MenuItem>
             <MenuItem value={10}>10 years</MenuItem>
@@ -35,7 +35,7 @@ function TenureSelect({data, setData}) {
           </Select>
       </FormControl>
     </div>
-  )
-}
+  );
+};
 
 export default TenureSelect;
